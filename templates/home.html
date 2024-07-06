@@ -17,17 +17,37 @@
   <body>
    <div class="container">
   
-    <h1 class="text-center mt-2 mb-4"">CODEHACK</h1>
+    <h1 class="text-center mt-2 mb-4"">{{company_name}}</h1>
      <div class="text-right mb-4 mt-2">
     <button type="button" class="btn btn-primary "
       style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Contact Us</button>
      </div>
     <img class="img-fluid" id="banner" src="static/banner.png">
     <h2 class="text-center mt-2 mb-4"">About Us</h2>
-    <p class="lead" >Welcome to CodeHack, your ultimate destination for mastering the art of computer science. At CodeHack, we are dedicated to empowering learners of all levels with high-quality, comprehensive courses across a variety of computer science domains. Whether you’re a beginner just starting your journey or an experienced professional looking to upskill, our meticulously crafted courses are designed to cater to your unique learning needs.</p>
-    <h2 class="text-center mt-2 mb-4"">Our Courses</h2>
      
-    <p>{{courses}}</p>
+    <p class="lead" >
+      Welcome to CodeHack, your ultimate destination for mastering the art of computer science. At CodeHack, we are dedicated to empowering learners of all levels with high-quality, comprehensive courses across a variety of computer science domains. Whether you’re a beginner just starting your journey or an experienced professional looking to upskill, our meticulously crafted courses are designed to cater to your unique learning needs.
+    </p>
+     
+    <h2 class="text-center mt-2 mb-4"">Our Courses</h2>
+
+     <div class="row row-cols-1 row-cols-md-3 g-4">
+       {% for course in courses %}
+       <div class="col">
+         <div class="card h-100">
+           <img src="{{course['image']}}" class="card-img-top" alt="...">
+           <div class="card-body">
+             <h5 class="card-title">{{course['title']}}</h5>
+             <p class="card-text">{{course['description']}}</p>
+           </div>
+           <div class="card-footer">
+             <small class="text-body-secondary">Course Provider: CODEHACK</small>
+           </div>
+         </div>
+       </div>
+       {% endfor %}
+     </div>
+
      
      <p class="text-center">Copyright 2024, CODEHACK</p>
      </div>
